@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="ino.web.admin.mapper">
+ 	
+ 	<select id="grplist" resultType="Map">
+ 		select *
+ 		from  grpt
+ 	</select>
+ 	
+ 	 <select id="objlist" resultType="Map">
+ 		select *
+ 		from  objt order by objid, dept
+ 	</select>
+
+ 	<select id="uselist" resultType="Map">
+		select m_objid, objname, high_obj, dept
+		from mapt 
+		where m_grpid = #{grpid}
+		order by dept
+ 	</select>
+ 	
+ 	<select id="countobj" resultType="int">
+ 		select count(m_objid) 
+ 		from mapt
+ 		where m_objid='OBJ100' and m_grpid=#{grpid}
+ 	</select>
+ 	
+ 	
+ 	<insert id="admininsert" parameterType="list">
+        <foreach collection="list" item="zz" separator="  " open="insert all " close=" select * from dual" > 
+        into mapt 
+        values
+        (#{zz.grpid},#{zz.objid},#{zz.grpname},#{zz.objname},#{zz.high_obj},#{zz.dept})
+        </foreach>
+    </insert>
+ 	
+	<delete id="admindelete" parameterType="list">
+		delete from mapt where 
+		<foreach collection="list"  item="ss"  separator="OR"  open="(" close=")">
+ 		m_grpid = #{ss.grpid} and  m_objid=#{ss.objid}
+		</foreach>
+	</delete>
+	
+	<select id="grpnamelist" resultType="String">
+		select grpname
+		from grpt
+		where grpid = #{grpid}
+	</select>
+	
+	<select id="loginCheck" resultType="int">
+		select count(userid) from usert 
+		where userid =#{userid}
+	</select>
+	
+	<select id="findgrpid" resultType="String">
+		select grpid from usert
+		where userid=#{userid}
+	</select>
+	
+	<select id="menulist" resultType="Map">
+		select m_objid, objname from mapt
+		where m_grpid = #{grpid}
+		order by m_objid
+	</select>
+	
+	<select id="treelist" resultType="Map">
+		select * from (select * from mapt where m_grpid=#{grpid})
+		start with high_obj is null
+		connect by prior m_objid = high_obj
+	</select>
+
+ </mapper>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ino.web.commonCode.mapper">
+	
+	<select id="selectCommonCodeList" resultType="HashMap">
+		SELECT * 
+		  FROM master
+	</select>
+
+	<select id="dcodeName" parameterType="HashMap" resultType="HashMap">
+		
+		select s.dcode_name, s.dcode
+			from master m left join sub s
+			on m.code = s.code
+			where m.code = #{code}
+			and s.use_yn = 'Y'
+
+	</select>
+
+	<select id="detail" parameterType="HashMap" resultType="HashMap">
+		
+		select s.code, s.dcode_name, s.dcode, s.use_yn
+			from master m left join sub s
+			on m.code = s.code
+			where m.code = #{code}
+			order by s.dcode 
+			
+	</select>
+
+	 <insert id="insert" parameterType="list">
+        <foreach collection="list" item="v" separator="  " open="insert all " close=" select * from dual" > 
+        into sub 
+        values
+        (#{v.dcode},#{v.dcode_name},#{v.use_yn},#{v.code})
+        </foreach>
+    </insert>
+    
+    <select id="insertlist" resultType="Map">
+		SELECT * 
+		  FROM sub
+		  where code = #{code}
+
+	</select>
+	
+	<select id="modifylist" resultType="String"  parameterType="Map">
+		SELECT code
+		  FROM sub
+		  where dcode = #{dcode}
+
+	</select>
+	
+	<select id="deletelist" resultType="String"  parameterType="Map">
+		SELECT code
+		  FROM sub
+		  where dcode = #{dcode}
+
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(dcode) from sub where dcode = #{dcode}
+	</select>
+
+	<update id="modify" parameterType="list">
+		<foreach collection="list" item="m" separator=";"  open="declare begin" close="; end;"> 
+		update sub set 
+		dcode_name = #{m.dcode_name},
+		use_yn = #{m.use_yn}
+		where dcode= #{m.dcode}
+		</foreach>
+	</update>
+	
+	<delete id="delete" parameterType="list">
+		delete from sub		
+		where 
+		<foreach collection="list"  item="del"  separator="OR"  open="(" close=")">
+ 		dcode = #{del.dcode}
+		</foreach>
+	</delete>
+	 
+</mapper>
