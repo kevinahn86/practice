@@ -6,12 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 function logout(){
 	
@@ -22,18 +18,23 @@ function logout(){
 </head>
 <body> 
 <form action="./login.ino" method="post"  id="loginfrm">
+
 <c:choose>
 	
 	<c:when test="${sessionScope.grpid =='100'}">
+
 		<br><br><br>
 		<button type="button" onclick="logout();">로그아웃</button>
 		<br><br><br>
 			<ul>
-				<c:forEach items="${treelist }" var="tree">
-					<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>			
+				<c:forEach items="${treelist }" var="tree">				
+				
+						<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>
+				
 				</c:forEach>
+				
 			</ul>
-	</c:when> 
+	</c:when>
 	
 	<c:when test="${sessionScope.grpid =='200'}">
 		<br><br><br>
