@@ -28,12 +28,12 @@ function logout(){
 		<br><br><br>
 			<ul>
 				<c:forEach items="${treelist }" var="tree">				
-				
+					<c:if test="${tree.DEPT=='1' }">
 						<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>
-				
-				</c:forEach>
-				
+					</c:if>
+				</c:forEach>			
 			</ul>
+			
 	</c:when>
 	
 	<c:when test="${sessionScope.grpid =='200'}">
