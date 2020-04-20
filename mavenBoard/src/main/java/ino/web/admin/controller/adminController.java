@@ -296,13 +296,20 @@ public class adminController {
 
 		map.put("userid", userid);
 		
+		String objid = "OBJ100";
+		map.put("objid", objid);
+
 		String grpid = adminService.findgrpid(map);
 		map.put("grpid", grpid);
+
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
+
 		session.setAttribute("grpid", grpid);
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
+		request.setAttribute("sublist", treelist);
+
 
 		return "boardMain";
 	}
@@ -324,13 +331,24 @@ public class adminController {
 
 		map.put("userid", userid);
 		
+		String objid = "OBJ110";
+		map.put("objid", objid);
+		 
 		String grpid = adminService.findgrpid(map);
 		map.put("grpid", grpid);
+		
+		String highobj = adminService.findhighobj(map);
+		map.put("high_obj", highobj);
+		
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
+		List<Map<String,Object>> parentlist = adminService.parent(map);
+		
 		session.setAttribute("grpid", grpid);
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
+		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", parentlist);
 		
 		return mav;
 	}
@@ -347,13 +365,23 @@ public class adminController {
 
 		map.put("userid", userid);
 		
+		String objid = "OBJ111";
+		map.put("objid", objid);
+
 		String grpid = adminService.findgrpid(map);
 		map.put("grpid", grpid);
+		
+		String highobj = adminService.findhighobj(map);
+		map.put("high_obj", highobj);
+		
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
+		List<Map<String,Object>> parentlist = adminService.parent(map);
 		session.setAttribute("grpid", grpid);
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
+		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", parentlist);
 		
 		return mav;
 	}
@@ -370,13 +398,23 @@ public class adminController {
 
 		map.put("userid", userid);
 		
+		String objid = "OBJ120";
+		map.put("objid", objid);
+
 		String grpid = adminService.findgrpid(map);
 		map.put("grpid", grpid);
+		
+		String highobj = adminService.findhighobj(map);
+		map.put("high_obj", highobj);
+		
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
+		List<Map<String,Object>> parentlist = adminService.parent(map);
 		session.setAttribute("grpid", grpid);
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
+		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", parentlist);
 		
 		return mav;
 	}
@@ -393,13 +431,23 @@ public class adminController {
 
 		map.put("userid", userid);
 		
+		String objid = "OBJ121";
+		map.put("objid", objid);
+
 		String grpid = adminService.findgrpid(map);
 		map.put("grpid", grpid);
+		
+		String highobj = adminService.findhighobj(map);
+		map.put("high_obj", highobj);
+		
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
+		List<Map<String,Object>> parentlist = adminService.parent(map);
 		session.setAttribute("grpid", grpid);
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
+		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", parentlist);
 		
 		return mav;
 	}
@@ -415,14 +463,24 @@ public class adminController {
 		String userid = (String)session.getAttribute("userid");
 
 		map.put("userid", userid);
-		
+			
+		String objid = "OBJ122";
+		map.put("objid", objid);
+
 		String grpid = adminService.findgrpid(map);
 		map.put("grpid", grpid);
+		
+		String highobj = adminService.findhighobj(map);
+		map.put("high_obj", highobj);
+		
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
+		List<Map<String,Object>> parentlist = adminService.parent(map);
 		session.setAttribute("grpid", grpid);
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
+		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", parentlist);
 		
 		return mav;
 	}

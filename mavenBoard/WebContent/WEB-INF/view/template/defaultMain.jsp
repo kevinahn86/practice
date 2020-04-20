@@ -10,16 +10,16 @@
 <body>
 
 
-		<div id="bodyAll" align="center" style="width: 800px;">
+		<div id="bodyAll" align="center" style="width: 1050px;">
 
 		<header>
 			<div style="width: 800px; margin: 0;">
 				<tiles:insertAttribute name="header" />
 			</div>
 		</header>
-		<div class="contents" style="width: 800px; margin: 0;">
+		<div class="contents" style="width: 850px; margin: 0;">
 			<aside>
-			<div style="float: left;  width: 150px; height:700px; border: 2px; solid: #b6b8bb; background-color: #aaaaaa;">
+			<div style="float: left;  width: 200px; height:700px; border: 2px; solid: #b6b8bb; background-color: #aaaaaa;">
 				<tiles:insertAttribute name="menu" />
 			</div>
 			</aside>

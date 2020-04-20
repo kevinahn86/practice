@@ -58,6 +58,16 @@ public class adminService {
 		return sqlSessionTemplate.selectOne("findgrpid",map);
 	}
 	
+	public String findhighobj(Map<String,Object> map) {
+		
+		return sqlSessionTemplate.selectOne("findhighobj",map);
+	}
+	
+	public String findobjid(Map<String,Object> map) {
+		
+		return sqlSessionTemplate.selectOne("findobjid",map);
+	}
+	
 	public List<Map<String,Object>> menulist(Map<String,Object> map) {
 		
 		return sqlSessionTemplate.selectList("menulist",map);
@@ -66,5 +76,10 @@ public class adminService {
 	public List<Map<String,Object>> treelist(Map<String,Object> map) {
 		
 		return sqlSessionTemplate.selectList("treelist",map);
+	}
+	
+	public List<Map<String,Object>> parent(Map<String,Object> map) {
+		
+		return sqlSessionTemplate.selectList("parent",map);
 	}
 }

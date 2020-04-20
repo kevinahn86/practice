@@ -60,6 +60,16 @@
 		where userid=#{userid}
 	</select>
 	
+	<select id="findhighobj" resultType="String">
+		select high_obj from mapt
+		where m_grpid = #{grpid} and m_objid = #{objid}
+	</select>
+	
+	<select id="findobjid" resultType="String">
+		select m_objid from mapt
+		where m_grpid = #{grpid} and m_objid = #{objid}
+	</select>
+	
 	<select id="menulist" resultType="Map">
 		select m_objid, objname from mapt
 		where m_grpid = #{grpid}
@@ -69,6 +79,12 @@
 	<select id="treelist" resultType="Map">
 		select * from (select * from mapt where m_grpid=#{grpid})
 		start with high_obj is null
+		connect by prior m_objid = high_obj
+	</select>
+	
+	<select id="parent" resultType="Map">
+		select * from (select * from mapt where m_grpid=#{grpid})
+		start with high_obj = #{high_obj}
 		connect by prior m_objid = high_obj
 	</select>
 

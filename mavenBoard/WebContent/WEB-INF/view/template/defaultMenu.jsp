@@ -31,31 +31,126 @@ function logout(){
 					<c:if test="${tree.DEPT=='1' }">
 						<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>
 					</c:if>
-				</c:forEach>			
+				</c:forEach>
+					<ul>
+							<c:forEach items="${sublist }" var="subtree">		
+									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ110'}">
+										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
+											<ul>
+												<c:forEach items="${parent }" var="par">		
+													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ110'}">
+														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+													</c:if>		
+												</c:forEach>
+											</ul>					
+									</c:if>		
+							</c:forEach>		
+					</ul>
+					
+					<ul>
+							<c:forEach items="${sublist }" var="subtree">		
+									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ120'}">
+										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
+											<ul>
+												<c:forEach items="${parent }" var="par">		
+													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ120'}">
+														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+													</c:if>		
+												</c:forEach>
+											</ul>					
+									</c:if>		
+							</c:forEach>		
+					</ul>		
 			</ul>
-			
+
 	</c:when>
 	
 	<c:when test="${sessionScope.grpid =='200'}">
+
 		<br><br><br>
 		<button type="button" onclick="logout();">로그아웃</button>
 		<br><br><br>
 			<ul>
-				<c:forEach items="${treelist }" var="tree">
-					<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>			
+				<c:forEach items="${treelist }" var="tree">				
+					<c:if test="${tree.DEPT=='1' }">
+						<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>
+					</c:if>
 				</c:forEach>
+					<ul>
+							<c:forEach items="${sublist }" var="subtree">		
+									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ110'}">
+										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
+											<ul>
+												<c:forEach items="${parent }" var="par">		
+													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ110'}">
+														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+													</c:if>		
+												</c:forEach>
+											</ul>					
+									</c:if>		
+							</c:forEach>		
+					</ul>
+					
+					<ul>
+							<c:forEach items="${sublist }" var="subtree">		
+									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ120'}">
+										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
+											<ul>
+												<c:forEach items="${parent }" var="par">		
+													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ120'}">
+														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+													</c:if>		
+												</c:forEach>
+											</ul>					
+									</c:if>		
+							</c:forEach>		
+					</ul>		
 			</ul>
+
 	</c:when>
 	
 	<c:when test="${sessionScope.grpid =='300'}">
+
 		<br><br><br>
 		<button type="button" onclick="logout();">로그아웃</button>
 		<br><br><br>
 			<ul>
-				<c:forEach items="${treelist }" var="tree">
-					<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>			
+				<c:forEach items="${treelist }" var="tree">				
+					<c:if test="${tree.DEPT=='1' }">
+						<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>
+					</c:if>
 				</c:forEach>
+					<ul>
+							<c:forEach items="${sublist }" var="subtree">		
+									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ110'}">
+										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
+											<ul>
+												<c:forEach items="${parent }" var="par">		
+													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ110'}">
+														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+													</c:if>		
+												</c:forEach>
+											</ul>					
+									</c:if>		
+							</c:forEach>		
+					</ul>
+					
+					<ul>
+							<c:forEach items="${sublist }" var="subtree">		
+									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ120'}">
+										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
+											<ul>
+												<c:forEach items="${parent }" var="par">		
+													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ120'}">
+														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+													</c:if>		
+												</c:forEach>
+											</ul>					
+									</c:if>		
+							</c:forEach>		
+					</ul>		
 			</ul>
+
 	</c:when>
 	
 	<c:when test="${sessionScope.grpid =='0'}">
