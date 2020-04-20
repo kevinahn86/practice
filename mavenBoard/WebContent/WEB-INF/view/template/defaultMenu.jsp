@@ -14,29 +14,37 @@ function logout(){
 	location.href="./logout.ino";
 	
 }
+
+function dd(e){
+	$('#'+e).children('ul').toggle();
+}
+
 </script>
+<style type="text/css">
+
+</style>
 </head>
 <body> 
 <form action="./login.ino" method="post"  id="loginfrm">
 
-<c:choose>
+<c:choose> 
 	
 	<c:when test="${sessionScope.grpid =='100'}">
 
 		<br><br><br>
 		<button type="button" onclick="logout();">로그아웃</button>
 		<br><br><br>
-			<ul>
+			<ul id="first"  onclick="dd(this.id);">
 				<c:forEach items="${treelist }" var="tree">				
 					<c:if test="${tree.DEPT=='1' }">
 						<li><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>
 					</c:if>
 				</c:forEach>
-					<ul>
+					<ul id="second-1"  onclick="dd(this.id);" >
 							<c:forEach items="${sublist }" var="subtree">		
 									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ110'}">
 										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
-											<ul>
+											<ul id="third-1" >
 												<c:forEach items="${parent }" var="par">		
 													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ110'}">
 														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
@@ -47,14 +55,14 @@ function logout(){
 							</c:forEach>		
 					</ul>
 					
-					<ul>
+					<ul id="second-2"  onclick="dd(this.id);" >
 							<c:forEach items="${sublist }" var="subtree">		
 									<c:if test="${subtree.DEPT=='2' && subtree.M_OBJID=='OBJ120'}">
 										<li><a href="./${subtree.M_OBJID }.ino">${subtree.OBJNAME }</a></li>
-											<ul>
-												<c:forEach items="${parent }" var="par">		
-													<c:if test="${par.DEPT=='3' && par.HIGH_OBJ=='OBJ120'}">
-														<li><a href="./${par.M_OBJID }.ino">${par.OBJNAME }</a></li>
+											<ul id="third-2"  onclick="dd(this.id);">
+												<c:forEach items="${parent1 }" var="par1">		
+													<c:if test="${par1.DEPT=='3' && par1.HIGH_OBJ=='OBJ120'}">
+														<li><a href="./${par1.M_OBJID }.ino">${par1.OBJNAME }</a></li>
 													</c:if>		
 												</c:forEach>
 											</ul>					

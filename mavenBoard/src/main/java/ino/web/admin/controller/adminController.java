@@ -220,9 +220,7 @@ public class adminController {
 		map.put("grpid", grpid);
 		List<Map<String,Object>> menulist = adminService.menulist(map);
 		List<Map<String,Object>> treelist = adminService.treelist(map);
-
-		System.out.println(treelist);
-		
+	
 	     if(flag==1) {
 
 		     session.setAttribute("userid", map.get("userid"));
@@ -414,7 +412,7 @@ public class adminController {
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
-		request.setAttribute("parent", parentlist);
+		request.setAttribute("parent1", parentlist);
 		
 		return mav;
 	}
@@ -447,7 +445,7 @@ public class adminController {
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
-		request.setAttribute("parent", parentlist);
+		request.setAttribute("parent1", parentlist);
 		
 		return mav;
 	}
@@ -480,7 +478,7 @@ public class adminController {
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
-		request.setAttribute("parent", parentlist);
+		request.setAttribute("parent1", parentlist);
 		
 		return mav;
 	}
