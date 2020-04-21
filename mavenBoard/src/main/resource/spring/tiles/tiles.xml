@@ -7,9 +7,16 @@
     <definition name="mainTemplate" template="/WEB-INF/view/template/defaultMain.jsp"/>
     <definition name="default" template="/WEB-INF/view/template/default.jsp"/>
 
-    <definition name="boardMain" extends="mainTemplate">
+
+	<definition name="Main" extends="mainTemplate">
         <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
         <put-attribute name="menu" value="/WEB-INF/view/template/defaultMenu.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
+        <put-attribute name="content" value="/WEB-INF/view/template/logon.jsp" />
+    </definition>
+    <definition name="boardMain" extends="mainTemplate">
+        <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/view/menu/obj100.jsp" />
         <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
         <put-attribute name="content" value="/WEB-INF/view/freeBoard/freeBoardMain.jsp" />
     </definition>
@@ -27,7 +34,7 @@
     </definition>
     <definition name="commonCodeMain" extends="mainTemplate">
         <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
-        <put-attribute name="menu" value="/WEB-INF/view/template/defaultMenu.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/view/menu/obj110.jsp" />
         <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
         <put-attribute name="content" value="/WEB-INF/view/commonCode/commonCodeMain.jsp" />
     </definition>
@@ -49,7 +56,28 @@
     
      <definition name="loginlist" extends="mainTemplate" >
         <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
-        <put-attribute name="menu" value="/WEB-INF/view/template/defaultMenu.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/view/menu/obj111.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
+        <put-attribute name="content" value="/WEB-INF/view/template/logon.jsp" />
+    </definition>
+    
+     <definition name="obj120" extends="mainTemplate" >
+        <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/view/menu/obj120.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
+        <put-attribute name="content" value="/WEB-INF/view/template/logon.jsp" />
+    </definition>
+    
+     <definition name="obj121" extends="mainTemplate" >
+        <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/view/menu/obj121.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
+        <put-attribute name="content" value="/WEB-INF/view/template/logon.jsp" />
+    </definition>
+    
+     <definition name="obj122" extends="mainTemplate" >
+        <put-attribute name="header" value="/WEB-INF/view/template/defaultHeader.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/view/menu/obj122.jsp" />
         <put-attribute name="footer" value="/WEB-INF/view/template/defaultFooter.jsp" />
         <put-attribute name="content" value="/WEB-INF/view/template/logon.jsp" />
     </definition>

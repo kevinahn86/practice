@@ -34,15 +34,7 @@ function sec2(){
 }
 </script>
 <style>
-.sec1{
-	display:none;
-}
-.sec2{
-	display:none;
-}
-.th1{
-	display:none;
-}
+
 .th2{
 	display:none;
 }

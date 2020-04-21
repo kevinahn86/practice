@@ -228,7 +228,10 @@ public class adminController {
 		     
 		     mav.addObject("treelist", treelist);
 		     mav.addObject("menulist", menulist);
-		     mav.setViewName("loginlist");
+		     mav.addObject("sublist", treelist);
+		     mav.addObject("parent", treelist);
+		     mav.addObject("parent1", treelist);
+		     mav.setViewName("Main");
 
 	     }else {
 	    	 mav.setViewName("default");
@@ -307,7 +310,8 @@ public class adminController {
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
-
+		request.setAttribute("parent", treelist);
+		request.setAttribute("parent1", treelist);
 
 		return "boardMain";
 	}
@@ -347,6 +351,7 @@ public class adminController {
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
 		request.setAttribute("parent", parentlist);
+		request.setAttribute("parent1", parentlist);
 		
 		return mav;
 	}
@@ -380,6 +385,7 @@ public class adminController {
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
 		request.setAttribute("parent", parentlist);
+		request.setAttribute("parent1", treelist);
 		
 		return mav;
 	}
@@ -389,7 +395,7 @@ public class adminController {
 		
 		ModelAndView mav = new ModelAndView();
 
-		mav.setViewName("loginlist");
+		mav.setViewName("obj120");
 		
 		Map<String,Object> map = new HashMap<String,Object>();
 		String userid = (String)session.getAttribute("userid");
@@ -412,6 +418,7 @@ public class adminController {
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", parentlist);
 		request.setAttribute("parent1", parentlist);
 		
 		return mav;
@@ -422,7 +429,7 @@ public class adminController {
 		
 		ModelAndView mav = new ModelAndView();
 
-		mav.setViewName("loginlist");
+		mav.setViewName("obj121");
 		
 		Map<String,Object> map = new HashMap<String,Object>();
 		String userid = (String)session.getAttribute("userid");
@@ -445,6 +452,7 @@ public class adminController {
 		request.setAttribute("menulist", menulist);
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
+		request.setAttribute("parent", treelist);
 		request.setAttribute("parent1", parentlist);
 		
 		return mav;
@@ -455,7 +463,7 @@ public class adminController {
 		
 		ModelAndView mav = new ModelAndView();
 
-		mav.setViewName("loginlist");
+		mav.setViewName("obj122");
 		
 		Map<String,Object> map = new HashMap<String,Object>();
 		String userid = (String)session.getAttribute("userid");
@@ -479,6 +487,7 @@ public class adminController {
 		request.setAttribute("treelist", treelist);
 		request.setAttribute("sublist", treelist);
 		request.setAttribute("parent1", parentlist);
+		request.setAttribute("parent", treelist);
 		
 		return mav;
 	}
