@@ -34,11 +34,12 @@ function sec2(){
 }
 </script>
 <style>
-
 .th1{
 	display:none;
 }
-
+.th2{
+	display:none;
+}
 </style>
 </head>
 <body> 

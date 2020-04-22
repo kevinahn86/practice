@@ -40,7 +40,7 @@ function sec2(){
 }
 </style>
 </head>
-<body> 
+<body>
 <form action="./login.ino" method="post"  id="loginfrm">
 
 <c:choose> 
