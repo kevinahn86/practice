@@ -32,6 +32,7 @@ function sec1(){
 function sec2(){
 	$('.th2').toggle();
 }
+
 </script>
 <style>
 .sec1{
@@ -58,7 +59,7 @@ function sec2(){
 		<br><br><br>
 		<button type="button" onclick="logout();">로그아웃</button>
 		<br><br><br>
-			<ul id="first" >
+			<ul id="first">
 				<c:forEach items="${treelist }" var="tree">				
 					<c:if test="${tree.DEPT=='1' }">
 						<li class="first" onclick="dd();"><a href="./${tree.M_OBJID }.ino">${tree.OBJNAME }</a></li>

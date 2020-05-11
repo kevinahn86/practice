@@ -330,7 +330,7 @@ $(document).ready(function() {
 		$("#root").html("");
 		
 		var frm = $(e).attr('value');
-		
+		console.log(e);
 		$.ajax({
 			url: "./objlist.ino" ,
 			type: "post" ,
